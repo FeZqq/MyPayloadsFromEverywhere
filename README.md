@@ -1,2 +1,2 @@
 # Strata
-Wordlists For Penetration Test (Use only for education or legal hacking)
+Wordlists and Metodologies For Penetration Test (Use only for education or legal hacking)

