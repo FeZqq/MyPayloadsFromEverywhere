@@ -31,3 +31,9 @@ javascript:alert(1)
 \"-alert(1)}//
 \';alert(1)//
 
+onclick event
+-------------
+http://foo?&apos;-alert(1)-&apos;
+
+
+
