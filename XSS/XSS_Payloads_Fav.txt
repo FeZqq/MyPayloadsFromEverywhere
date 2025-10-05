@@ -30,6 +30,7 @@ Other
 javascript:alert(1)
 \"-alert(1)}//
 \';alert(1)//
+<img src/onerror=prompt("test")>
 
 onclick event
 -------------
