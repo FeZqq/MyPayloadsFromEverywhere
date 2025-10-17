@@ -52,4 +52,3 @@ http://example.com/index.php?page=images….//….//….//...etc/passwd
 Validation of Start Path
 -------------------------
 http://example.com/index.php?page=/validated_path/../../../../../../../etc/passwd
-
