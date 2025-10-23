@@ -30,3 +30,9 @@ Conceptual scenario (summary)
 
 - If the cache were keyed, the payload would only be valid for the attacker and would not affect others.
 
+######################################################
+Note: Use "Param Miner" for detect unkeyed parameters
+######################################################
+
+
+
