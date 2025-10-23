@@ -1,3 +1,32 @@
 Metodology
 ----------
 The detection is same as "Web Cache Deception". >> Cache headers like "X-Cache". If static sites stored in cache, attackers can potentially access sensitive content by crafting specific URLs. This allows unauthorized retrieval of cached pages that shouldn’t be publicly available. 
+
+Unkeyed cache / request
+------------------------
+- The server does not distinguish which user/host/parameter a request belongs to when caching it.
+
+- In other words, if every incoming request has the same URL, the cache returns the same response.
+
+- Risk: If the application generates an absolute URL based on a user-controlled value (e.g., X-Forwarded-Host), a malicious URL could be stored in the cache and served to other users → leading to XSS or redirect scenarios.
+
+
+Keyed cache / request
+----------------------
+- The cache key is generated based on specific headers, session information, or parameters.
+
+- A unique cache response is created for each user/host.
+
+- In this case, an attacker’s impact on other users is limited because the cache is user-specific.
+
+
+Conceptual scenario (summary)
+-----------------------------
+- If a header or parameter is not keyed (unkeyed), the cache is shared.
+
+- An attacker can generate a URL that appears harmless but contains a payload using X-Forwarded-Host or a similar header.
+
+- This response is stored in the cache → others receive it from the same cache → XSS or redirect can be triggered.
+
+- If the cache were keyed, the payload would only be valid for the attacker and would not affect others.
+
