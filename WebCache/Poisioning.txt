@@ -1,0 +1,3 @@
+Metodology
+----------
+The detection is same as "Web Cache Deception". >> Cache headers like "X-Cache". If static sites stored in cache, attackers can potentially access sensitive content by crafting specific URLs. This allows unauthorized retrieval of cached pages that shouldn’t be publicly available. 
