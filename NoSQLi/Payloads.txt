@@ -51,5 +51,8 @@ Extract data with "$in" query operator
 Other
 -----
 {"$regex":"wien.*"}
+test'||1||'
+test'&&1&&'
+
 
 (Note: Payloads from PayloadsAllTheThings)
