@@ -1,0 +1,11 @@
+- innerHTML
+- outerHTML
+- document.write
+- document.writeln
+- insertAdjacentHTML
+- html() (jQuery)
+- element.setAttribute("onclick", user_input)
+- eval()
+- Function()
+- setTimeout(user_input)
+- setInterval(user_input)
